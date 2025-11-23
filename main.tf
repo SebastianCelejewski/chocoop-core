@@ -6,12 +6,12 @@ module "sns" {
   source  = "terraform-aws-modules/sns/aws"
   version = ">= 5.0"
 
-  name = "sebcel-chocoop-data-changes-topic-${var.environment}"
+  name       = "sebcel-chocoop-data-changes-topic-${var.environment}"
   fifo_topic = true
 
   tags = {
     application = "chocoop"
-    module = "chocoop-core"
+    module      = "chocoop-core"
     environment = var.environment
   }
 }

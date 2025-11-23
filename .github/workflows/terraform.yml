@@ -36,7 +36,7 @@ jobs:
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
-      run: set -x terraform fmt -check -recursive || echo "fmt rc=$?" terraform init || echo "init rc=$?" terraform plan -input=false || echo "plan rc=$?" terraform version || true exit 0
+      run: terraform fmt -check
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
