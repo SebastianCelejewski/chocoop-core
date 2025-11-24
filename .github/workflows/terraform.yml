@@ -1,4 +1,4 @@
-name: 'Terraform'
+me: 'Terraform'
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@main # Or a specific version
       with:
         role-to-assume: arn:aws:iam::953201351151:role/sebcel-github-ci-role
-        aws-region: us-central-1
+        aws-region: eu-central-1
 
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
