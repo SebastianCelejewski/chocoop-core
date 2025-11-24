@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   terraform:
@@ -20,6 +21,13 @@ jobs:
         shell: bash
 
     steps:
+    # Configuring access to AWS using OIDC
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@main # Or a specific version
+      with:
+        role-to-assume: arn:aws:iam::953201351151:role/sebcel-github-ci-role
+        aws-region: eu-central-1
+
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
